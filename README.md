@@ -21,17 +21,6 @@ Here is a simple example on how to use the parser:
 ```javascript
 const expression = parse("2 * x - 3");
 const expressionPrefix = parsePrefix("(- (* 2 x) 3)");
-/*
-expression/expressionParser: 
-
-    new Subtract(
-        new Multiply(
-            new Const(2),
-            new Variable("x")
-        ),
-        new Const(3)
-    );
- */
 
 let result = expression.evaluate(5, 2, 3);  // evaluates "2 * 5 - 3"
 let resultPrefix = expressionParser.evaluate(1, 2, 3);  // evaluates "(- (* 2 5) 3)"
